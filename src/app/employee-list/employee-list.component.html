@@ -1,0 +1,177 @@
+<h3><span class="m-2">Employee's List</span></h3>
+
+<div class="row ml-1">
+    <table class="table table-bordered table-striped table-responsive">
+      <thead>
+      <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Designation</th>
+        <th>Primary WorkLocation</th>
+        <th>Official EmailAddr</th>
+        <th>Extn Number</th>
+        <th>Mobile Number</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let employee of employeeList">
+        <tr>
+          <td data-toggle="modal" data-target="#myModal">{{employee.empId}}</td>
+          <td>{{employee.empName}}</td>
+          <td>{{employee.designation}}</td>
+          <td>{{employee.primaryWorkLocation}}</td>
+          <td>{{employee.officialEmailAddr}}</td>
+          <td>{{employee.extensionNumber}}</td>
+          <td>{{employee.mobileNumber}}</td>
+          <div ng-include="'employee.component.html'">
+          <td><button class='btn btn-primary' (click) = "editEmployee(employee)"><i class="fa fa-futboll-0">Edit</i></button> </td></div>
+          <td><button (click)="deleteEmployee(employee)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button></td>
+        </tr>
+      </tbody>
+<!--
+      <td><button (click)="getEmployeeList()" class='btn btn-primary'><i class="fa fa-futboll-0">List</i></button>
+-->
+        <!--<button (click)="updateStudent(student.student_id)" class='btn btn-info'
+                data-toggle="modal" data-target="#myModal">Update</button>-->
+    </table>
+  <div class="modal" id="myModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header" >
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal" id="delete" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header" >
+          <h4 class="modal-title">Deleted Successfully</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngIf="employeedetails">
+    <form [formGroup]="form" #searchInfo (ngSubmit)="searchForm(searchInfo)">
+    <input type="text" formControlName="empId" placeholder="EmployeeId" name="search">
+    <button (click)="employeeDetails()" class="btn btn-info" style="margin-left: 10px">Search</button>
+    <div [hidden]="submitted" style="width: 400px;"></div>
+    <mat-table class="lessons-table mat-elevation-z8" mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="employeeId">
+            <div *matHeaderCellDef>EmployeeId</div>
+            <div  *matCellDef="let lesson">{{employeedetails.empId}}</div>
+            </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+  <td>
+      <label><b>Employee Name: </b></label> {{employeedetails.empName}}
+    </td>
+    <td>
+        <label><b>Employee Desigination: </b></label> {{employeedetails.desigination}}
+      </td>
+    <td>
+        <label><b>Employee PrimaryWorkLocation: </b></label> {{employeedetails.primaryWorkLocation}}
+      </td>
+    <td>
+        <label><b>Employee OfficialEmailAddr: </b></label> {{employeedetails.officialEmailAddr}}
+      </td>
+    <td>
+        <label><b>Employee EmailAddr: </b></label> {{employeedetails.emailAddr}}
+      </td>
+    <td>
+        <label><b>Employee ExtensionNumber: </b></label> {{employeedetails.extensionNumber}}
+      </td>
+    <td>
+        <label><b>Employee MobileNumber: </b></label> {{employeedetails.mobileNumber}}
+      </td>
+    <td>
+        <label><b>Employee ProjectName: </b></label> {{employeedetails.projectName}}
+      </td>
+    <td>
+        <label><b>Employee ReportingTo: </b></label> {{employeedetails.reportingTo}}
+      </td>
+    <td>
+        <label><b>Employee DeliveryHead: </b></label> {{employeedetails.deliveryHead}}
+      </td>
+    <td>
+        <label><b>Employee SkillName: </b></label> {{employeedetails.skillName}}
+      </td>
+    <td>
+        <label><b>Employee Experience: </b></label> {{employeedetails.experience}}
+      </td>-->
+<!--</mat-table>
+</div>
+ -->

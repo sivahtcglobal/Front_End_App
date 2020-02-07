@@ -1,0 +1,23 @@
+<!--<mat-grid-list cols="4" >
+  <mat-grid-tile
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.background]="tile.color">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list>&ndash;&gt;-->
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" class="widthContainer"opened>
+    <nav class="m-2" style="margin-top:10rem"><a routerLink="" routerLinkActive="active">Home</a></nav>
+    <nav class="m-2"><a routerLink="employeeDetails" routerLinkActive="active">Add Employee</a></nav>
+    <nav class="m-2"><a routerLink="search" routerLinkActive="active">Search</a></nav>
+  </mat-drawer>
+  <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>
+
+
+
+<!--
+<router-outlet></router-outlet>
+-->

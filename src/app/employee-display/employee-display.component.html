@@ -1,0 +1,213 @@
+<p> #Employee Component</p>
+<form [formGroup]="addEmployeeForm" #addEmployee (ngSubmit)="onSubmit()">
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Employee Details
+        </mat-panel-title>
+        <mat-icon>account_circle</mat-icon>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        EmployeeId: {{empId}}
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Employee Name " required formControlName="empName"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.empName.errors }"/>
+        <div *ngIf="submitted && fval.empName.errors" class="alert alert-danger">
+          <div *ngIf="fval.empName.errors.required">
+            Employee Name is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input matInput placeholder="Designation " required formControlName="designation"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.designation.errors }"/>
+        <div *ngIf="submitted && fval.designation.errors" class="alert alert-danger">
+          <div *ngIf="fval.designation.errors.required">
+            Designation is required
+          </div>
+        </div>
+      </mat-form-field>
+      <div>
+        <mat-form-field>
+          <mat-label>Location</mat-label>
+          <mat-select matNativeControl required formControlName="primaryWorkLocation" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.primaryWorkLocation.errors }">
+            <mat-option value="mepz">Mepz</mat-option>
+            <mat-option value="guindy">Guindy</mat-option>
+            <mat-option value="htchyderabad"> HTCHyderabad</mat-option>
+            <mat-option value="ciber">Ciber</mat-option>
+          </mat-select>
+          <div *ngIf="submitted && fval.primaryWorkLocation.errors" class="alert alert-danger">
+            <div *ngIf="fval.primaryWorkLocation.errors.required">
+              Location is required
+            </div>
+          </div>
+        </mat-form-field>
+      </div>
+      &nbsp;&nbsp;&nbsp;
+      <mat-panel-title>
+        PersonalDetails
+      </mat-panel-title>
+      <mat-form-field>
+        <input matInput placeholder="Official Email Address " required formControlName="officialEmailAddr" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.officialEmailAddr.errors }"/>
+        <div *ngIf="submitted && fval.officialEmailAddr.errors" class="alert alert-danger">
+          <div *ngIf="fval.officialEmailAddr.errors.required">
+            Official Email Address is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input matInput placeholder=" Personal Email Address" required formControlName="emailAddr"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.emailAddr.errors }"/>
+        <div *ngIf="submitted && fval.emailAddr.errors" class="alert alert-danger">
+          <div *ngIf="fval.emailAddr.errors.required">
+            Email Address is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input matInput placeholder="Extension Number " required formControlName="extensionNumber"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.extensionNumber.errors }"/>
+        <div *ngIf="submitted && fval.extensionNumber.errors" class="alert alert-danger">
+          <div *ngIf="fval.extensionNumber.errors.required">
+            Extension Number is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input matInput placeholder="Mobile Number " required formControlName="mobileNumber"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.mobileNumber.errors }"/>
+        <div *ngIf="submitted && fval.mobileNumber.errors" class="alert alert-danger">
+          <div *ngIf="fval.mobileNumber.errors.required">
+            Mobile Number is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;
+      <mat-panel-title>
+        Address
+      </mat-panel-title>
+      <mat-form-field>
+        <input matInput placeholder="AddressLine " required formControlName="addressLine"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.addressLine.errors }"/>
+        <div *ngIf="submitted && fval.addressLine.errors" class="alert alert-danger">
+          <div *ngIf="fval.addressLine.errors.required">
+            Address Line is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input matInput placeholder="City" required formControlName="city"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.city.errors }"/>
+        <div *ngIf="submitted && fval.city.errors" class="alert alert-danger">
+          <div *ngIf="fval.city.errors.required">
+            City is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input matInput placeholder="State " required formControlName="state"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.state.errors }"/>
+        <div *ngIf="submitted && fval.state.errors" class="alert alert-danger">
+          <div *ngIf="fval.state.errors.required">
+            State is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input matInput placeholder="Country " required formControlName="country"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.country.errors }"/>
+        <div *ngIf="submitted && fval.country.errors" class="alert alert-danger">
+          <div *ngIf="fval.country.errors.required">
+            Country is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input matInput placeholder="Pincode " required formControlName="pincode"class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.pincode.errors }"/>
+        <div *ngIf="submitted && fval.pincode.errors" class="alert alert-danger">
+          <div *ngIf="fval.pincode.errors.required">
+            Pincode is required
+          </div>
+        </div>
+      </mat-form-field>
+      &nbsp;
+    </mat-expansion-panel>
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Project Details
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div formArrayName="projects">
+        <div *ngFor="let project of projectsArray().controls; let i=index">
+          <div [formGroupName]="i">
+            <mat-form-field>
+              <mat-label>Project Name</mat-label>
+              <mat-select matNativeControl required formControlName="projectName" class="form-control">
+                <mat-option value="nahoForms">Naho Forms</mat-option>
+                <mat-option value="theGeneral">The General</mat-option>
+                <mat-option value="recap"> Recap</mat-option>
+                <mat-option value="hashStirngs">Hash Strings</mat-option>
+                <mat-option value="ole">Ole</mat-option>
+              </mat-select>
+            </mat-form-field>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <mat-form-field>
+              <input matInput placeholder="Reporting To " required formControlName="reportingTo" class="form-control"/>
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field>
+              <input matInput placeholder="Delivery Head" required formControlName="deliveryHead"class="form-control" />
+            </mat-form-field>
+            &nbsp;&nbsp;
+            <button (click)="removeProject(i)">Remove</button>
+          </div>
+        </div>
+      </div>
+      <button type="button" (click)="addProject()">Add Project</button>
+    </mat-expansion-panel>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Skills
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <div formArrayName="skills">
+          <div *ngFor="let skill of skillsArray().controls; let i=index">
+            <div [formGroupName]="i">
+              <mat-form-field>
+                <mat-label>Skill Name</mat-label>
+                <mat-select matNativeControl required formControlName="skillName" class="form-control">
+                  <mat-option value="select">Select</mat-option>
+                  <mat-option value="java">Java</mat-option>
+                  <mat-option value="sql">SQL</mat-option>
+                  <mat-option value="springBoot"> Spring Boot</mat-option>
+                  <mat-option value="hibernate">Hibernate</mat-option>
+                  <mat-option value="angular">Angular</mat-option>
+                </mat-select>
+              </mat-form-field>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+              <mat-form-field>
+                <mat-label>Experience</mat-label>
+                <input matInput required formControlName="experience"class="form-control"/>
+              </mat-form-field>
+
+              &nbsp; &nbsp;
+              <button (click)="removeSkill(i)">Remove</button>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="addSkill()">Add Skill</button>
+      </mat-list>
+    </mat-expansion-panel>
+    <mat-action-row>
+      <button type="submit" mat-button color="primary">Submit</button>
+    </mat-action-row>
+  </mat-accordion>
+</form>
+
